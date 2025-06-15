@@ -5,8 +5,9 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { CULTURAL_CATEGORIES } from '@/constants';
 import CulturalItemCard from '@/components/cultural-item-card';
+import { Suspense } from 'react';
 
-export default function DiscoverPage() {
+function InnerDiscover() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -15,7 +16,6 @@ export default function DiscoverPage() {
   const [items, setItems] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch MongoDB data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -32,13 +32,11 @@ export default function DiscoverPage() {
     fetchData();
   }, []);
 
-  // Update category when query param changes
   useEffect(() => {
     const cat = searchParams.get('category') || 'all';
     setSelectedCategory(cat);
   }, [searchParams]);
 
-  // Update URL when user clicks a tab
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
     router.push(`/discover?category=${category}`);
@@ -54,11 +52,7 @@ export default function DiscoverPage() {
         );
 
   return (
-    <div className="container mx-auto py-8 px-4">
-      <h1 className="text-2xl font-bold text-center mb-6 font-headline">
-        Discover India&apos;s Culture
-      </h1>
-
+    <>
       <Tabs value={selectedCategory} onValueChange={handleCategoryChange}>
         <TabsList className="flex flex-wrap justify-center gap-2 mb-4">
           <TabsTrigger value="all">All</TabsTrigger>
@@ -83,6 +77,19 @@ export default function DiscoverPage() {
           )}
         </TabsContent>
       </Tabs>
+    </>
+  );
+}
+
+export default function DiscoverPage() {
+  return (
+    <div className="container mx-auto py-8 px-4">
+      <h1 className="text-2xl font-bold text-center mb-6 font-headline">
+        Discover India&apos;s Culture
+      </h1>
+      <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
+        <InnerDiscover />
+      </Suspense>
     </div>
   );
 }
