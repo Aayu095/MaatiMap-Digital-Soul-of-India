@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 11%; /* Dark Charcoal Black - #1C1C1E */
+    --foreground: 0 0% 96%; /* Off-White - #F4F4F4 */
+
+    --card: 0 0% 11%; /* Dark Charcoal Black */
+    --card-foreground: 0 0% 96%; /* Off-White */
+
+    --popover: 0 0% 11%; /* Dark Charcoal Black */
+    --popover-foreground: 0 0% 96%; /* Off-White */
+
+    --primary: 24 94% 60%; /* Earthy Saffron - #FF8C42 */
+    --primary-foreground: 0 0% 96%; /* Off-White */
+
+    --secondary: 22 14% 20%; /* Clay Brown - #3A2F27 */
+    --secondary-foreground: 0 0% 96%; /* Off-White */
+
+    --muted: 32 10% 64%; /* Warm Grey - #C0B5A6 */
+    --muted-foreground: 0 0% 96%; /* Off-White */
+
+    --accent: 38 25% 52%; /* Muted Gold - #B08D57 */
+    --accent-foreground: 0 0% 96%; /* Off-White */
+
+    --destructive: 0 70% 50%; /* Dark Theme Red */
+    --destructive-foreground: 0 0% 96%; /* Off-White */
+
+    --border: 0 0% 18%; /* Deep Brown - #2A2A2D */
+    --input: 26 16% 22%; /* Input Background */
+    --ring: 24 94% 60%; /* Earthy Saffron */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 26 16% 15%; /* Very Dark Brown */
+    --sidebar-foreground: 0 0% 96%; /* Off-White */
+    --sidebar-primary: 24 94% 60%; /* Earthy Saffron */
+    --sidebar-primary-foreground: 26 16% 15%; /* Very Dark Brown */
+    --sidebar-accent: 38 25% 52%; /* Muted Gold */
+    --sidebar-accent-foreground: 0 0% 96%; /* Off-White */
+    --sidebar-border: 0 0% 18%; /* Deep Brown */
+    --sidebar-ring: 24 94% 60%; /* Earthy Saffron */
+
+    --chart-1: 24 94% 60%; /* Earthy Saffron */
+    --chart-2: 38 25% 52%; /* Muted Gold */
+    --chart-3: 32 10% 64%; /* Warm Grey */
+    --chart-4: 22 14% 20%; /* Clay Brown */
+    --chart-5: 0 0% 18%; /* Deep Brown */
+  }
+
+  .dark { /* Ensure dark theme variables are identical for a consistent dark mode */
+    --background: 0 0% 11%; /* Dark Charcoal Black */
+    --foreground: 0 0% 96%; /* Off-White */
+    --card: 0 0% 11%; /* Dark Charcoal Black */
+    --card-foreground: 0 0% 96%; /* Off-White */
+    --popover: 0 0% 11%; /* Dark Charcoal Black */
+    --popover-foreground: 0 0% 96%; /* Off-White */
+    --primary: 24 94% 60%; /* Earthy Saffron */
+    --primary-foreground: 0 0% 96%; /* Off-White */
+    --secondary: 22 14% 20%; /* Clay Brown */
+    --secondary-foreground: 0 0% 96%; /* Off-White */
+    --muted: 32 10% 64%; /* Warm Grey */
+    --muted-foreground: 0 0% 96%; /* Off-White */
+    --accent: 38 25% 52%; /* Muted Gold */
+    --accent-foreground: 0 0% 96%; /* Off-White */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 96%; /* Off-White */
+    --border: 0 0% 18%; /* Deep Brown */
+    --input: 26 16% 22%;
+    --ring: 26 70% 55%;
+
+    --sidebar-background: 26 16% 15%; /* Very Dark Brown */
+    --sidebar-foreground: 47 58% 97%; /* Light Beige */
+    --sidebar-primary: 30 100% 60%; /* Saffron */
+    --sidebar-primary-foreground: 26 16% 15%; /* Very Dark Brown */
+    --sidebar-accent: 28 41% 50%; /* Earthy Brown */
+    --sidebar-accent-foreground: 47 58% 97%; /* Light Beige */
+    --sidebar-border: 28 41% 60%; /* Slightly Lighter Earthy Brown */
+    --sidebar-ring: 30 100% 60%; /* Saffron */
+
+    --chart-1: 24 94% 60%; /* Earthy Saffron */
+    --chart-2: 38 25% 52%; /* Muted Gold */
+    --chart-3: 32 10% 64%; /* Warm Grey */
+    --chart-4: 22 14% 20%; /* Clay Brown */
+    --chart-5: 0 0% 18%; /* Deep Brown */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
