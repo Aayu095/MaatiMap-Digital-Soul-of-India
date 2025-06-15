@@ -3,13 +3,14 @@
 <p align="left">
   <img src="https://img.shields.io/badge/Made%20with-Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Made with Next.js"/>
   <img src="https://img.shields.io/badge/Database-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Database Firebase"/>
+  <img src="https://img.shields.io/badge/AI-Genkit(Gemini)-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="AI by Genkit (Gemini)"/>
+  <img src="https://img.shields.io/badge/Vector%20Search-MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt = "Vector Search - MongoDB Atlas"/>
   <img src="https://img.shields.io/badge/UI-Tailwind%20CSS-0D47A1?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="UI - Tailwind CSS"/>
     <img src="https://img.shields.io/badge/Authentication-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Authentication Firebase"/>
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT"/>
-  <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg?style=for-the-badge" alt="Contributions Welcome"/>
 </p>
 
-**MaatiMap** is a web application that allows users to explore the diverse culture of India. Discover art, food, heritage sites, rituals, music, and festivals from different regions. Save your favorite cultural items to your profile and plan your tour!
+**Maati** is a web application that allows users to explore the diverse culture of India. Discover art, food, heritage sites, rituals, music, and festivals from different regions. Save your favorite cultural items, get AI-powered recommendations, plan your tour, and share your own local culture with the community!
 
 ---
 
@@ -19,47 +20,61 @@
 *   [🔑 API Key Configuration](#-api-key-configuration)
 *   [⚙️ Setup & Installation](#️-setup--installation)
 *   [🚀 Running Locally](#-running-locally)
-*   [🤝 Contributing](#-contributing)
 *   [📄 License](#-license)
 *   [📬 Contact](#-contact)
 
 ---
 
 ## ✨ Core Features
-*   🔖 **Bookmarking:** Save cultural items to your personal collection.
-*   ❤️ **Real-time Updates:** Bookmark status updates instantly across the application.
-*   🗺️ **Interactive Map:** Discover cultural items plotted on an interactive map of India.
-*   🔎 **Search:** Find cultural experiences based on keywords.
-*   🎨 **Categorized Discovery:** Browse culture by categories like art, food, and heritage sites.
-*   📍 **Regional Focus:** Explore cultural items specific to different regions of India.
-*   👤 **User Authentication:** Securely create an account and manage your saved items.
+
+*   **Explore India:**
+    *   🗺️ **Interactive Map:** Discover cultural items plotted on an interactive map of India.
+    *   🔎 **Search:** Find cultural experiences based on keywords.
+    *   🎨 **Categorized Discovery:** Browse culture by categories like art, food, and heritage sites.
+    *   📍 **Near You:** Discover cultural experiences near your current location
+    *   🏘️ **Community Feed:** Share your local culture with the community by uploading your own content and viewing content from others.
+*   **Personalize Your Experience:**
+    *   ❤️ **Bookmarking:** Save cultural items to your personal collection.
+    *   🎲 **Maati Spin Wheel:** Win exciting prizes by spinning the Maati loot wheel!
+*   **AI-Powered Exploration:**
+    *   🤖 **AI Assistant**: Chat with an AI guide for recommendations and information.
+    *   ✨ **AI Summaries**: Use AI to summarize cultural details
+    *   ✈️ **Plan My Tour**:  Use AI to plan your personalized cultural tour of India!
+*   **User Experience:**
+    *   👤 **User Authentication:** Securely create an account and manage your saved items.
 
 ---
 
 ## 🛠️ Tech Stack
+
 *   **Frontend:** Next.js (App Router), React, TypeScript
 *   **Styling:** Tailwind CSS, ShadCN UI
 *   **Database:** Firebase Firestore
 *   **Authentication:** Firebase Authentication
-*   **Mapping:** (Potentially Placeholder for a mapping library)
-
+*   **AI Orchestration:** Genkit (with Google Gemini models)
+*   **Vector Search:** MongoDB Atlas
 ---
 
 ## 🔑 API Key Configuration
-Create two files in your project root:
 
-1.  **`.env.local` (for client-side Firebase config):**
-    ```env
+Create an \`.env.local\` file in your project root and add the following API keys:
+
+```env
+    GEMINI_API_KEY=YOUR_GEMINI_API_KEY_FOR_GOOGLE_AI_SERVICES_HERE
+    MONGODB_URI=YOUR_MONGODB_CONNECTION_STRING_HERE
     NEXT_PUBLIC_FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY_HERE
     NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=YOUR_FIREBASE_AUTH_DOMAIN_HERE
     NEXT_PUBLIC_FIREBASE_PROJECT_ID=YOUR_FIREBASE_PROJECT_ID_HERE
     NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=YOUR_FIREBASE_STORAGE_BUCKET_HERE
     NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=YOUR_FIREBASE_MESSAGING_SENDER_ID_HERE
     NEXT_PUBLIC_FIREBASE_APP_ID=YOUR_FIREBASE_APP_ID_HERE
-    ```
-    *Obtain Firebase config values from your Firebase project settings.*
+```
 
-**Important:** This `.env.local` file is ignored by git (see `.gitignore`) and should not be committed. Your Vercel deployment will require these to be set as environment variables in its project settings.
+*   *Obtain Firebase config values from your Firebase project settings.*
+*   *Get your Gemini API Key from Google AI Studio.*
+*   *Set up a MongoDB Atlas cluster and obtain the connection string.*
+
+**Important:** This \`.env.local\` file is ignored by git (see \`.gitignore\`) and should not be committed. Your Vercel deployment will require these to be set as environment variables in its project settings.
 
 ---
 
@@ -84,29 +99,31 @@ Create two files in your project root:
     *   Create a Firebase project and enable Firestore Database and Authentication.
     *   Set up Firestore Security Rules:  *(Remember to configure appropriate security rules for your data. The public rules used earlier are not recommended for production.)*
 
+5.  **MongoDB Atlas Setup**:
+    *   Create a MongoDB Atlas account
+    *   Create a cluster
+    *   Add your IP address to the access list
+    *   Get the connection string and add it to the .env file
 ---
 
 ## 🚀 Running Locally
 
-1.  **Start the Next.js Development Server:**
+You need to run two development servers concurrently:
+
+1.  **Next.js Development Server (Frontend & Web APIs):**
     ```bash
     npm run dev
-    # or
-    yarn dev
     ```
-    (App usually runs on `http://localhost:3000`)
+    (App usually runs on `http://localhost:9002`)
 
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page]([YOUR_REPOSITORY_ISSUES_URL]).
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+2.  **Genkit Development Server (AI Flows):**
+    (Open a new terminal)
+    ```bash
+    npm run genkit:dev
+    # or for auto-reloading:
+    # npm run genkit:watch
+    ```
+    (Genkit server usually runs on `http://localhost:3400`. Check its logs for API key loading status.)
 
 ---
 
@@ -119,6 +136,6 @@ See the [LICENSE](./LICENSE) file for details.
 
 ## 📬 Contact
 
-For any queries, ideas, or collaborations, reach out at: [YOUR_EMAIL_ADDRESS]
+For any queries, ideas, or collaborations, reach out at: [aayushigoel73@gmail.com]
 
-Project Link: [YOUR_REPOSITORY_URL]
+Project Link: [https://github.com/Aayu095/MaatiMap-Digital-Soul-of-India](https://github.com/Aayu095/MaatiMap-Digital-Soul-of-India)
