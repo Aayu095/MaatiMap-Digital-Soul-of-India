@@ -33,6 +33,7 @@
     *   🎨 **Categorized Discovery:** Browse culture by categories like art, food, and heritage sites.
     *   📍 **Near You:** Discover cultural experiences near your current location
     *   🏘️ **Community Feed:** Share your local culture with the community by uploading your own content and viewing content from others.
+    *   📅 **Upcoming Events and Festivals:** Stay updated on upcoming cultural events and festivals across India.
 *   **Personalize Your Experience:**
     *   ❤️ **Bookmarking:** Save cultural items to your personal collection.
     *   🎲 **Maati Spin Wheel:** Win exciting prizes by spinning the Maati loot wheel!
@@ -42,6 +43,7 @@
     *   ✈️ **Plan My Tour**:  Use AI to plan your personalized cultural tour of India!
 *   **User Experience:**
     *   👤 **User Authentication:** Securely create an account and manage your saved items.
+
 
 ---
 

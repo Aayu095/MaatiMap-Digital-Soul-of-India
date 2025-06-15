@@ -11,6 +11,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { CulturalItem } from '@/lib/types';
+import { auth } from '@/lib/firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 export default function Header() {
   const pathname = usePathname();
@@ -19,6 +21,7 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [searchResults, setSearchResults] = useState<CulturalItem[]>([]);
+  const [user, loading, error] = useAuthState(auth);
 
   const isHomePage = pathname === '/';
 
@@ -31,7 +34,6 @@ export default function Header() {
     { icon: <GiLotus />, label: 'Festivals', route: '/discover?category=festivals' },
     { icon: <GiIndiaGate />, label: 'Discover', route: '/discover' },
     { icon: <GiBookmark />, label: 'Bookmarks', route: '/bookmarks' },
-    { icon: <FaRegUserCircle />, label: 'Profile', route: '/profile' },
   ];
 
   // Fetch all cultural items (replace with your actual data fetching logic)
@@ -48,7 +50,7 @@ export default function Header() {
   // Filter search results whenever searchQuery changes
   useEffect(() => {
     const filtered = allItems.filter(item =>
-      item.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.summary?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.region?.toLowerCase().includes(searchQuery.toLowerCase())
@@ -91,10 +93,15 @@ export default function Header() {
           </button>
         )}
 
-        <Link href="/auth/login" className="text-[#F3E4BE] hover:text-[#B08D57]">
-          <FaUser />
-        </Link>
-
+        {user ? (
+          <Link href="/profile" className="text-[#F3E4BE] hover:text-[#B08D57]">
+            <FaRegUserCircle />
+          </Link>
+        ) : (
+          <Link href="/auth/login" className="text-[#F3E4BE] hover:text-[#B08D57]">
+            <FaUser />
+          </Link>
+        )}
       </div>
 
       {/* Search Modal */}
@@ -105,15 +112,15 @@ export default function Header() {
             placeholder="Enter your search query..."
             className="bg-[#1C1C1E] text-[#F3E4BE] rounded-md px-3 py-1 text-sm focus:outline-none w-full"
             value={searchQuery}
-            onChange={(e) =>  {
+            onChange={(e) => {
               setSearchQuery(e.target.value);
             }}
-            onKeyDown = {(e) => {if (e.key === 'Enter') {router.push(`/search?query=${searchQuery}`)} }}
+            onKeyDown={(e) => { if (e.key === 'Enter') { router.push(`/search?query=${searchQuery}`) } }}
           />
           {searchResults.length > 0 && (
             <ul className="py-2">
               {searchResults.map(item => (
-                <li key={item._id} className="px-3 py-1 hover:bg-[#3A3A3D]"><Link href={`/discover/${item.category}/${item.id}`}>{item.name}</Link></li>
+                <li key={item.id} className="px-3 py-1 hover:bg-[#3A3A3D]"><Link href={`/discover/${item.category}/${item.id}`}>{item.title}</Link></li>
               ))}
             </ul>
           )}

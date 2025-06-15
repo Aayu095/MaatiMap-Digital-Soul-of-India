@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { useRouter } from 'next/navigation';
+import { ArrowLeft } from 'lucide-react';
 
 export default function ProfilePage() {
   const [user, setUser] = useState<any>(null);
@@ -35,7 +36,16 @@ export default function ProfilePage() {
     );
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#1C1C1E] text-[#F3E4BE] font-body px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#1C1C1E] text-[#F3E4BE] font-body px-4 relative">
+      {/* 🏠 Back to Home Button */}
+      <button
+        onClick={() => router.push("/")}
+        className="absolute top-4 left-4 p-2 rounded-full bg-[#2A2A2D] hover:bg-[#3A3A3E] text-[#F3E4BE] hover:text-[#B08D57] shadow-lg transition-colors z-50"
+        aria-label="Back to homepage"
+      >
+        <ArrowLeft className="h-5 w-5" />
+      </button>
+
       <div className="bg-[#2A2A2D] p-8 rounded-xl shadow-xl max-w-md w-full text-center">
         <h1 className="text-2xl font-headline mb-4">
           Welcome, {user.displayName || user.email}
