@@ -6,8 +6,9 @@
   <img src="https://img.shields.io/badge/AI-Genkit(Gemini)-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="AI by Genkit (Gemini)"/>
   <img src="https://img.shields.io/badge/Vector%20Search-MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt = "Vector Search - MongoDB Atlas"/>
   <img src="https://img.shields.io/badge/UI-Tailwind%20CSS-0D47A1?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="UI - Tailwind CSS"/>
-    <img src="https://img.shields.io/badge/Authentication-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Authentication Firebase"/>
+  <img src="https://img.shields.io/badge/Authentication-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Authentication Firebase"/>
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT"/>
+  <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg?style=for-the-badge" alt="Contributions Welcome"/>
 </p>
 
 **Maati** is a web application that allows users to explore the diverse culture of India. Discover art, food, heritage sites, rituals, music, and festivals from different regions. Save your favorite cultural items, get AI-powered recommendations, plan your tour, and share your own local culture with the community!
@@ -20,6 +21,7 @@
 *   [🔑 API Key Configuration](#-api-key-configuration)
 *   [⚙️ Setup & Installation](#️-setup--installation)
 *   [🚀 Running Locally](#-running-locally)
+*   [🤝 Contributing](#-contributing)
 *   [📄 License](#-license)
 *   [📬 Contact](#-contact)
 
@@ -126,6 +128,17 @@ You need to run two development servers concurrently:
     # npm run genkit:watch
     ```
     (Genkit server usually runs on `http://localhost:3400`. Check its logs for API key loading status.)
+
+---
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/Aayu095/MaatiMap-Digital-Soul-of-India). <!-- Ensure this is your correct issues URL -->
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
 ---
 
