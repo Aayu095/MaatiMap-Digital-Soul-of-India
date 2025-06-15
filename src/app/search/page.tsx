@@ -1,19 +1,11 @@
-'use client';
-
-import { useSearchParams } from 'next/navigation';
+// /app/search/page.tsx
+import { Suspense } from 'react';
+import SearchPageContent from './SearchPageContent';
 
 export default function SearchPage() {
-  const searchParams = useSearchParams();
-  const query = searchParams.get('query');
-
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-2xl font-bold mb-4">Search Results</h1>
-      {query ? (
-        <p>Results for: {query}</p>
-      ) : (
-        <p>Please enter a search query.</p>
-      )}
-    </div>
+    <Suspense fallback={<div className="p-8">Loading search results...</div>}>
+      <SearchPageContent />
+    </Suspense>
   );
 }
