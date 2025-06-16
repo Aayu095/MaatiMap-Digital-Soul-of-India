@@ -38,7 +38,7 @@
     *   📅 **Upcoming Events and Festivals:** Stay updated on upcoming cultural events and festivals across India.
 *   **Personalize Your Experience:**
     *   ❤️ **Bookmarking:** Save cultural items to your personal collection.
-    *   🎲 **Maati Spin Wheel:** Win exciting prizes by spinning the Maati loot wheel!
+    *   🎲 **Maati Spin Wheel:** Enjoy a fun, gamified experience and win exciting prizes by spinning the Maati Loot Wheel!
 *   **AI-Powered Exploration:**
     *   🤖 **AI Assistant**: Chat with an AI guide for recommendations and information.
     *   ✨ **AI Summaries**: Use AI to summarize cultural details
