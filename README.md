@@ -151,6 +151,6 @@ See the [LICENSE](./LICENSE) file for details.
 
 ## 📬 Contact
 
-For any queries, ideas, or collaborations, reach out at: [aayushigoel73@gmail.com]
+For any queries, ideas, or collaborations, reach out at: [aayushigoel73@gmail.com](aayushigoel73@gmail.com)
 
 Project Link: [https://github.com/Aayu095/MaatiMap-Digital-Soul-of-India](https://github.com/Aayu095/MaatiMap-Digital-Soul-of-India)
