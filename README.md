@@ -1,4 +1,4 @@
-# 🌐 Maati: Discover India's Culture
+# 🌐 MaatiMap: Digital Soul of India
 <!-- Badges -->
 <p align="left">
   <img src="https://img.shields.io/badge/Made%20with-Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Made with Next.js"/>
