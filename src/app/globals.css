@@ -4,87 +4,149 @@
 
 @layer base {
   :root {
-    --background: 0 0% 11%; /* Dark Charcoal Black - #1C1C1E */
-    --foreground: 0 0% 96%; /* Off-White - #F4F4F4 */
+    --background: 0 0% 11%;
+    /* Dark Charcoal Black - #1C1C1E */
+    --foreground: 0 0% 96%;
+    /* Off-White - #F4F4F4 */
 
-    --card: 0 0% 11%; /* Dark Charcoal Black */
-    --card-foreground: 0 0% 96%; /* Off-White */
+    --card: 0 0% 11%;
+    /* Dark Charcoal Black */
+    --card-foreground: 0 0% 96%;
+    /* Off-White */
 
-    --popover: 0 0% 11%; /* Dark Charcoal Black */
-    --popover-foreground: 0 0% 96%; /* Off-White */
+    --popover: 0 0% 11%;
+    /* Dark Charcoal Black */
+    --popover-foreground: 0 0% 96%;
+    /* Off-White */
 
-    --primary: 24 94% 60%; /* Earthy Saffron - #FF8C42 */
-    --primary-foreground: 0 0% 96%; /* Off-White */
+    --primary: 24 94% 60%;
+    /* Earthy Saffron - #FF8C42 */
+    --primary-foreground: 0 0% 96%;
+    /* Off-White */
 
-    --secondary: 22 14% 20%; /* Clay Brown - #3A2F27 */
-    --secondary-foreground: 0 0% 96%; /* Off-White */
+    --secondary: 22 14% 20%;
+    /* Clay Brown - #3A2F27 */
+    --secondary-foreground: 0 0% 96%;
+    /* Off-White */
 
-    --muted: 32 10% 64%; /* Warm Grey - #C0B5A6 */
-    --muted-foreground: 0 0% 96%; /* Off-White */
+    --muted: 32 10% 64%;
+    /* Warm Grey - #C0B5A6 */
+    --muted-foreground: 0 0% 96%;
+    /* Off-White */
 
-    --accent: 38 25% 52%; /* Muted Gold - #B08D57 */
-    --accent-foreground: 0 0% 96%; /* Off-White */
+    --accent: 38 25% 52%;
+    /* Muted Gold - #B08D57 */
+    --accent-foreground: 0 0% 96%;
+    /* Off-White */
 
-    --destructive: 0 70% 50%; /* Dark Theme Red */
-    --destructive-foreground: 0 0% 96%; /* Off-White */
+    --destructive: 0 70% 50%;
+    /* Dark Theme Red */
+    --destructive-foreground: 0 0% 96%;
+    /* Off-White */
 
-    --border: 0 0% 18%; /* Deep Brown - #2A2A2D */
-    --input: 26 16% 22%; /* Input Background */
-    --ring: 24 94% 60%; /* Earthy Saffron */
+    --border: 0 0% 18%;
+    /* Deep Brown - #2A2A2D */
+    --input: 26 16% 22%;
+    /* Input Background */
+    --ring: 24 94% 60%;
+    /* Earthy Saffron */
 
     --radius: 0.5rem;
 
-    --sidebar-background: 26 16% 15%; /* Very Dark Brown */
-    --sidebar-foreground: 0 0% 96%; /* Off-White */
-    --sidebar-primary: 24 94% 60%; /* Earthy Saffron */
-    --sidebar-primary-foreground: 26 16% 15%; /* Very Dark Brown */
-    --sidebar-accent: 38 25% 52%; /* Muted Gold */
-    --sidebar-accent-foreground: 0 0% 96%; /* Off-White */
-    --sidebar-border: 0 0% 18%; /* Deep Brown */
-    --sidebar-ring: 24 94% 60%; /* Earthy Saffron */
+    --sidebar-background: 26 16% 15%;
+    /* Very Dark Brown */
+    --sidebar-foreground: 0 0% 96%;
+    /* Off-White */
+    --sidebar-primary: 24 94% 60%;
+    /* Earthy Saffron */
+    --sidebar-primary-foreground: 26 16% 15%;
+    /* Very Dark Brown */
+    --sidebar-accent: 38 25% 52%;
+    /* Muted Gold */
+    --sidebar-accent-foreground: 0 0% 96%;
+    /* Off-White */
+    --sidebar-border: 0 0% 18%;
+    /* Deep Brown */
+    --sidebar-ring: 24 94% 60%;
+    /* Earthy Saffron */
 
-    --chart-1: 24 94% 60%; /* Earthy Saffron */
-    --chart-2: 38 25% 52%; /* Muted Gold */
-    --chart-3: 32 10% 64%; /* Warm Grey */
-    --chart-4: 22 14% 20%; /* Clay Brown */
-    --chart-5: 0 0% 18%; /* Deep Brown */
+    --chart-1: 24 94% 60%;
+    /* Earthy Saffron */
+    --chart-2: 38 25% 52%;
+    /* Muted Gold */
+    --chart-3: 32 10% 64%;
+    /* Warm Grey */
+    --chart-4: 22 14% 20%;
+    /* Clay Brown */
+    --chart-5: 0 0% 18%;
+    /* Deep Brown */
   }
 
-  .dark { /* Ensure dark theme variables are identical for a consistent dark mode */
-    --background: 0 0% 11%; /* Dark Charcoal Black */
-    --foreground: 0 0% 96%; /* Off-White */
-    --card: 0 0% 11%; /* Dark Charcoal Black */
-    --card-foreground: 0 0% 96%; /* Off-White */
-    --popover: 0 0% 11%; /* Dark Charcoal Black */
-    --popover-foreground: 0 0% 96%; /* Off-White */
-    --primary: 24 94% 60%; /* Earthy Saffron */
-    --primary-foreground: 0 0% 96%; /* Off-White */
-    --secondary: 22 14% 20%; /* Clay Brown */
-    --secondary-foreground: 0 0% 96%; /* Off-White */
-    --muted: 32 10% 64%; /* Warm Grey */
-    --muted-foreground: 0 0% 96%; /* Off-White */
-    --accent: 38 25% 52%; /* Muted Gold */
-    --accent-foreground: 0 0% 96%; /* Off-White */
+  .dark {
+    /* Ensure dark theme variables are identical for a consistent dark mode */
+    --background: 0 0% 11%;
+    /* Dark Charcoal Black */
+    --foreground: 0 0% 96%;
+    /* Off-White */
+    --card: 0 0% 11%;
+    /* Dark Charcoal Black */
+    --card-foreground: 0 0% 96%;
+    /* Off-White */
+    --popover: 0 0% 11%;
+    /* Dark Charcoal Black */
+    --popover-foreground: 0 0% 96%;
+    /* Off-White */
+    --primary: 24 94% 60%;
+    /* Earthy Saffron */
+    --primary-foreground: 0 0% 96%;
+    /* Off-White */
+    --secondary: 22 14% 20%;
+    /* Clay Brown */
+    --secondary-foreground: 0 0% 96%;
+    /* Off-White */
+    --muted: 32 10% 64%;
+    /* Warm Grey */
+    --muted-foreground: 0 0% 96%;
+    /* Off-White */
+    --accent: 38 25% 52%;
+    /* Muted Gold */
+    --accent-foreground: 0 0% 96%;
+    /* Off-White */
     --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 96%; /* Off-White */
-    --border: 0 0% 18%; /* Deep Brown */
+    --destructive-foreground: 0 0% 96%;
+    /* Off-White */
+    --border: 0 0% 18%;
+    /* Deep Brown */
     --input: 26 16% 22%;
     --ring: 26 70% 55%;
 
-    --sidebar-background: 26 16% 15%; /* Very Dark Brown */
-    --sidebar-foreground: 47 58% 97%; /* Light Beige */
-    --sidebar-primary: 30 100% 60%; /* Saffron */
-    --sidebar-primary-foreground: 26 16% 15%; /* Very Dark Brown */
-    --sidebar-accent: 28 41% 50%; /* Earthy Brown */
-    --sidebar-accent-foreground: 47 58% 97%; /* Light Beige */
-    --sidebar-border: 28 41% 60%; /* Slightly Lighter Earthy Brown */
-    --sidebar-ring: 30 100% 60%; /* Saffron */
+    --sidebar-background: 26 16% 15%;
+    /* Very Dark Brown */
+    --sidebar-foreground: 47 58% 97%;
+    /* Light Beige */
+    --sidebar-primary: 30 100% 60%;
+    /* Saffron */
+    --sidebar-primary-foreground: 26 16% 15%;
+    /* Very Dark Brown */
+    --sidebar-accent: 28 41% 50%;
+    /* Earthy Brown */
+    --sidebar-accent-foreground: 47 58% 97%;
+    /* Light Beige */
+    --sidebar-border: 28 41% 60%;
+    /* Slightly Lighter Earthy Brown */
+    --sidebar-ring: 30 100% 60%;
+    /* Saffron */
 
-    --chart-1: 24 94% 60%; /* Earthy Saffron */
-    --chart-2: 38 25% 52%; /* Muted Gold */
-    --chart-3: 32 10% 64%; /* Warm Grey */
-    --chart-4: 22 14% 20%; /* Clay Brown */
-    --chart-5: 0 0% 18%; /* Deep Brown */
+    --chart-1: 24 94% 60%;
+    /* Earthy Saffron */
+    --chart-2: 38 25% 52%;
+    /* Muted Gold */
+    --chart-3: 32 10% 64%;
+    /* Warm Grey */
+    --chart-4: 22 14% 20%;
+    /* Clay Brown */
+    --chart-5: 0 0% 18%;
+    /* Deep Brown */
   }
 }
 
@@ -92,9 +154,290 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+}
+
+/* Leaflet Map White Background - Floating India Effect */
+.leaflet-container {
+  background-color: #ffffff !important;
+  font-family: inherit;
+}
+
+.leaflet-white-bg {
+  background-color: #ffffff !important;
+}
+
+/* Style Leaflet attribution */
+.leaflet-control-attribution {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  color: #333333 !important;
+  font-size: 10px;
+}
+
+.leaflet-control-attribution a {
+  color: #ff8c42 !important;
+}
+
+/* Smooth state transitions */
+.leaflet-interactive {
+  transition: fill-opacity 0.2s ease, stroke-width 0.2s ease;
+}
+
+/* Zoom controls styling */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 11%;
+    /* Dark Charcoal Black - #1C1C1E */
+    --foreground: 0 0% 96%;
+    /* Off-White - #F4F4F4 */
+
+    --card: 0 0% 11%;
+    /* Dark Charcoal Black */
+    --card-foreground: 0 0% 96%;
+    /* Off-White */
+
+    --popover: 0 0% 11%;
+    /* Dark Charcoal Black */
+    --popover-foreground: 0 0% 96%;
+    /* Off-White */
+
+    --primary: 24 94% 60%;
+    /* Earthy Saffron - #FF8C42 */
+    --primary-foreground: 0 0% 96%;
+    /* Off-White */
+
+    --secondary: 22 14% 20%;
+    /* Clay Brown - #3A2F27 */
+    --secondary-foreground: 0 0% 96%;
+    /* Off-White */
+
+    --muted: 32 10% 64%;
+    /* Warm Grey - #C0B5A6 */
+    --muted-foreground: 0 0% 96%;
+    /* Off-White */
+
+    --accent: 38 25% 52%;
+    /* Muted Gold - #B08D57 */
+    --accent-foreground: 0 0% 96%;
+    /* Off-White */
+
+    --destructive: 0 70% 50%;
+    /* Dark Theme Red */
+    --destructive-foreground: 0 0% 96%;
+    /* Off-White */
+
+    --border: 0 0% 18%;
+    /* Deep Brown - #2A2A2D */
+    --input: 26 16% 22%;
+    /* Input Background */
+    --ring: 24 94% 60%;
+    /* Earthy Saffron */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 26 16% 15%;
+    /* Very Dark Brown */
+    --sidebar-foreground: 0 0% 96%;
+    /* Off-White */
+    --sidebar-primary: 24 94% 60%;
+    /* Earthy Saffron */
+    --sidebar-primary-foreground: 26 16% 15%;
+    /* Very Dark Brown */
+    --sidebar-accent: 38 25% 52%;
+    /* Muted Gold */
+    --sidebar-accent-foreground: 0 0% 96%;
+    /* Off-White */
+    --sidebar-border: 0 0% 18%;
+    /* Deep Brown */
+    --sidebar-ring: 24 94% 60%;
+    /* Earthy Saffron */
+
+    --chart-1: 24 94% 60%;
+    /* Earthy Saffron */
+    --chart-2: 38 25% 52%;
+    /* Muted Gold */
+    --chart-3: 32 10% 64%;
+    /* Warm Grey */
+    --chart-4: 22 14% 20%;
+    /* Clay Brown */
+    --chart-5: 0 0% 18%;
+    /* Deep Brown */
+  }
+
+  .dark {
+    /* Ensure dark theme variables are identical for a consistent dark mode */
+    --background: 0 0% 11%;
+    /* Dark Charcoal Black */
+    --foreground: 0 0% 96%;
+    /* Off-White */
+    --card: 0 0% 11%;
+    /* Dark Charcoal Black */
+    --card-foreground: 0 0% 96%;
+    /* Off-White */
+    --popover: 0 0% 11%;
+    /* Dark Charcoal Black */
+    --popover-foreground: 0 0% 96%;
+    /* Off-White */
+    --primary: 24 94% 60%;
+    /* Earthy Saffron */
+    --primary-foreground: 0 0% 96%;
+    /* Off-White */
+    --secondary: 22 14% 20%;
+    /* Clay Brown */
+    --secondary-foreground: 0 0% 96%;
+    /* Off-White */
+    --muted: 32 10% 64%;
+    /* Warm Grey */
+    --muted-foreground: 0 0% 96%;
+    /* Off-White */
+    --accent: 38 25% 52%;
+    /* Muted Gold */
+    --accent-foreground: 0 0% 96%;
+    /* Off-White */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 96%;
+    /* Off-White */
+    --border: 0 0% 18%;
+    /* Deep Brown */
+    --input: 26 16% 22%;
+    --ring: 26 70% 55%;
+
+    --sidebar-background: 26 16% 15%;
+    /* Very Dark Brown */
+    --sidebar-foreground: 47 58% 97%;
+    /* Light Beige */
+    --sidebar-primary: 30 100% 60%;
+    /* Saffron */
+    --sidebar-primary-foreground: 26 16% 15%;
+    /* Very Dark Brown */
+    --sidebar-accent: 28 41% 50%;
+    /* Earthy Brown */
+    --sidebar-accent-foreground: 47 58% 97%;
+    /* Light Beige */
+    --sidebar-border: 28 41% 60%;
+    /* Slightly Lighter Earthy Brown */
+    --sidebar-ring: 30 100% 60%;
+    /* Saffron */
+
+    --chart-1: 24 94% 60%;
+    /* Earthy Saffron */
+    --chart-2: 38 25% 52%;
+    /* Muted Gold */
+    --chart-3: 32 10% 64%;
+    /* Warm Grey */
+    --chart-4: 22 14% 20%;
+    /* Clay Brown */
+    --chart-5: 0 0% 18%;
+    /* Deep Brown */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Leaflet Map White Background - Floating India Effect */
+.leaflet-container {
+  background-color: transparent !important;
+  font-family: inherit;
+}
+
+.leaflet-white-bg {
+  background-color: transparent !important;
+}
+
+/* Style Leaflet attribution */
+.leaflet-control-attribution {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  color: #333333 !important;
+  font-size: 10px;
+}
+
+.leaflet-control-attribution a {
+  color: #ff8c42 !important;
+}
+
+/* Smooth state transitions */
+.leaflet-interactive {
+  transition: fill-opacity 0.2s ease, stroke-width 0.2s ease;
+}
+
+/* Zoom controls styling */
+.leaflet-control-zoom a {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #333333 !important;
+  border-color: #dddddd !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: rgba(255, 140, 66, 0.9) !important;
+  color: #ffffff !important;
+}
+
+/* Custom Cultural Markers */
+.cultural-marker {
+  transition: transform 0.2s ease;
+}
+
+.cultural-marker:hover {
+  transform: scale(1.15);
+}
+
+.cultural-marker-small {
+  font-size: 16px;
+}
+
+.cultural-marker-medium {
+  font-size: 20px;
+}
+
+.cultural-marker-large {
+  font-size: 28px;
+}
+
+/* State Icon Markers */
+.state-icon-marker {
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.state-icon-marker:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 20px rgba(255, 140, 66, 0.5) !important;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 6px 16px rgba(255, 140, 66, 0.4);
+  }
+}
+
+/* Custom icon containers */
+.custom-cultural-icon,
+.custom-state-icon {
+  background: transparent !important;
+  border: none !important;
 }

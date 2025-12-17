@@ -1,20 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-
-const upcomingEvent = {
-  name: "Theyyam",
-  location: "Kerala",
-  date: "April 7 - 14",
-  imageUrl: "https://i.postimg.cc/pLhBc0Gy/theyyam.jpg",
-  imageHint: "Theyyam ritual dark",
-  href: "/discover/festivals/theyyam-placeholder",
-};
+import { ArrowRight, Calendar } from "lucide-react";
+import { useFeaturedEvents } from "@/hooks/use-events";
+import { formatEventDate } from "@/lib/eventUtils";
 
 const localHighlight = {
   name: "Near You",
@@ -69,6 +61,10 @@ const communityStories = [
 export default function HomePage() {
   const homepageBackgroundImageUrl = "https://i.postimg.cc/52yMfCv6/Chat-GPT-Image-Jun-6-2025-11-09-18-AM.png";
 
+  // Fetch featured upcoming events
+  const { data: featuredEvents = [] } = useFeaturedEvents(1);
+  const upcomingEvent = featuredEvents[0];
+
   return (
     <div
       className="text-foreground"
@@ -103,26 +99,64 @@ export default function HomePage() {
       <section className="py-12 lg:py-20 bg-background/70 backdrop-blur-sm">
         <div className="container max-w-screen-xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            <Card className="bg-card border-border/50 shadow-xl overflow-hidden flex flex-col group relative">
-              <Link href={upcomingEvent.href} className="block">
-                <div className="relative w-full h-96 md:h-[450px]">
-                  <Image
-                    src={upcomingEvent.imageUrl}
-                    alt={upcomingEvent.name}
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint={upcomingEvent.imageHint}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                </div>
-                <CardContent className="absolute bottom-0 left-0 p-5 z-10 text-white w-full">
-                  <h3 className="text-xs uppercase tracking-wider font-semibold text-primary mb-1">Upcoming Events</h3>
-                  <CardTitle className="text-xl font-headline mb-1 text-foreground">{upcomingEvent.name}</CardTitle>
-                  <p className="text-xs font-body text-foreground/80">{upcomingEvent.location}</p>
-                  <p className="text-xs font-body text-foreground/70">{upcomingEvent.date}</p>
-                </CardContent>
-              </Link>
-            </Card>
+            {/* Dynamic Upcoming Event Card with Calendar Icon */}
+            {upcomingEvent ? (
+              <Card className="bg-card border-border/50 shadow-xl overflow-hidden group relative">
+                <Link href="/events" className="block">
+                  <div className="relative w-full h-96 md:h-[450px]">
+                    <Image
+                      src={upcomingEvent.imageUrl}
+                      alt={upcomingEvent.title}
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint={upcomingEvent.imageHint}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  </div>
+                  <CardContent className="absolute bottom-0 left-0 p-6 z-10 text-white w-full">
+                    <div className="flex items-center gap-1.5 mb-2">
+                      <Calendar className="h-3.5 w-3.5 text-primary" />
+                      <h3 className="text-xs uppercase tracking-wider font-semibold text-primary">Upcoming Events</h3>
+                    </div>
+                    <CardTitle className="text-xl md:text-2xl font-headline mb-1 text-white">{upcomingEvent.title}</CardTitle>
+                    <p className="text-sm font-body text-white/90 mb-1">
+                      {upcomingEvent.city ? `${upcomingEvent.city}, ${upcomingEvent.state}` : upcomingEvent.state}
+                    </p>
+                    <p className="text-xs font-body text-white/70">
+                      {formatEventDate(upcomingEvent.startDate, upcomingEvent.endDate)}
+                    </p>
+                  </CardContent>
+                </Link>
+              </Card>
+            ) : (
+              <Card className="bg-card border-border/50 shadow-xl overflow-hidden group relative">
+                <Link href="/events" className="block">
+                  <div className="relative w-full h-96 md:h-[450px]">
+                    <Image
+                      src="https://i.postimg.cc/9fnP77sk/theyyam.jpg"
+                      alt="Upcoming Cultural Events"
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint="Theyyam cultural dance Kerala"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  </div>
+                  <CardContent className="absolute bottom-0 left-0 p-6 z-10 text-white w-full">
+                    <div className="flex items-center gap-1.5 mb-2">
+                      <Calendar className="h-3.5 w-3.5 text-primary" />
+                      <h3 className="text-xs uppercase tracking-wider font-semibold text-primary">Upcoming Events</h3>
+                    </div>
+                    <CardTitle className="text-xl md:text-2xl font-headline mb-1 text-white">Theyyam</CardTitle>
+                    <p className="text-sm font-body text-white/90 mb-1">
+                      Kerala
+                    </p>
+                    <p className="text-xs font-body text-white/70">
+                      April 7 - 14
+                    </p>
+                  </CardContent>
+                </Link>
+              </Card>
+            )}
 
             <div className="space-y-6 lg:space-y-8 md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
               <Card className="bg-card border-border/50 shadow-xl overflow-hidden group">

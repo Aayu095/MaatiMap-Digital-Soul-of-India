@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins, Playfair_Display, Source_Code_Pro } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+import { Providers } from '@/components/providers';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -38,8 +39,10 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${playfairDisplay.variable} ${sourceCodePro.variable} font-body antialiased`}
       >
-        {children}
-        <Toaster />
+        <Providers>
+          {children}
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );

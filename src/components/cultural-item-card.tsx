@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Star, StarOff } from 'lucide-react';
+import { Star, StarOff, MapPin } from 'lucide-react';
 
 import type { CulturalItem } from '@/lib/types';
 import { CULTURAL_CATEGORIES } from '@/constants';
@@ -13,10 +13,11 @@ import { useBookmarks } from '@/hooks/use-bookmarks';
 import { useEffect, useState } from 'react';
 
 interface CulturalItemCardProps {
-  item: CulturalItem;
+  item: CulturalItem & { distance?: number };
+  showDistance?: boolean;
 }
 
-export default function CulturalItemCard({ item }: CulturalItemCardProps) {
+export default function CulturalItemCard({ item, showDistance = false }: CulturalItemCardProps) {
   const { user, bookmarkedIds, toggleBookmark, hydrated } = useBookmarks();
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -65,14 +66,22 @@ export default function CulturalItemCard({ item }: CulturalItemCardProps) {
             {item.summary}
           </p>
         </Link>
-        {categoryInfo && (
-          <Badge variant="secondary" className="text-[10px] mb-1.5 px-1.5 py-0.5">
-            {categoryInfo.name}
+        <div className="flex flex-wrap gap-1.5">
+          {categoryInfo && (
+            <Badge variant="secondary" className="text-[10px] px-1.5 py-0.5">
+              {categoryInfo.name}
+            </Badge>
+          )}
+          <Badge variant="outline" className="text-[10px] px-1.5 py-0.5">
+            {item.region}
           </Badge>
-        )}
-        <Badge variant="outline" className="text-[10px] px-1.5 py-0.5">
-          {item.region}
-        </Badge>
+          {showDistance && item.distance !== undefined && (
+            <Badge variant="default" className="text-[10px] px-1.5 py-0.5 bg-primary/10 text-primary hover:bg-primary/20">
+              <MapPin className="h-2.5 w-2.5 mr-0.5" />
+              {item.distance} km
+            </Badge>
+          )}
+        </div>
       </CardContent>
 
       <CardFooter className="p-3 pt-0">
